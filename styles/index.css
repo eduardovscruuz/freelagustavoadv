@@ -18,12 +18,32 @@ body {
 }
 
 #whats {
-  width: 100px;
+  width: 9dvb;
   position: fixed;
   bottom: 30px;
   margin-right: 50px;
   display: flex;
   align-self: flex-end;
+  border-radius: 50%;
+  background: #32d10a;
+  box-shadow: 0 0 0 rgba(26, 216, 0, 0.747);
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+#whats:hover {
+  animation: none;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(21, 255, 0, 0.11);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(43, 255, 0, 0.123);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(30, 255, 0, 0.062);
+  }
 }
 
 header {
@@ -53,6 +73,13 @@ header nav li {
   text-transform: uppercase;
   font-weight: bolder;
   letter-spacing: 2px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+header nav li:hover {
+  transform: scale(105%);
+  transform: translateY(-10%);
+  color: #FEDB37;
 }
 
 #background {
@@ -87,12 +114,19 @@ button {
   background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #e9ba5c 8%, #a87c1d 30%, #d4aa47 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #e9d981 8%, #d8b75b 25%, #926d17 62.5%, #9c7825 100%);
   font-weight: 900;
   text-transform: uppercase;
-  width: 60%;
+  width: 70%;
   font-size: 21px;
   border: none;
   border-radius: 25px;
   padding: 18px;
   margin-top: 15px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(105%);
+  transform: translateY(-10%);
 }
 
 h1 {
@@ -112,9 +146,28 @@ h3 {
 }
 
 .area {
+  padding: 10px;
+  margin-top: 50px;
   background-color: white;
-  width: 250px;
-  height: 250px;
+  width: 320px;
+  height: 300px;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.area button {
+  width: 80%;
+  font-size: 16px;
+}
+.area h4 {
+  margin: 0;
+  font-size: 22px;
+}
+.area p {
+  text-align: center;
 }
 
 .title {
@@ -144,11 +197,15 @@ h3 {
 
 .about {
   padding: 3%;
-  height: 100vh;
+  height: 110vh;
   background-color: rgba(32, 32, 32, 0.8431372549);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#profile {
+  filter: drop-shadow(4px 10px 17px rgba(0, 0, 0, 0.7058823529));
 }
 
 #texto {
@@ -185,14 +242,27 @@ h3 {
 }
 
 .findme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 150vh;
   background-color: rgb(250, 250, 250);
 }
+.findme button {
+  position: absolute;
+  transform: translateY(-75%);
+  width: 30%;
+}
+.findme button:hover {
+  transform: scale(105%);
+  transform: translateY(-85%);
+}
 
 #mapa {
-  margin-top: 60px;
+  margin-top: 80px;
   width: 100%;
   height: 35%;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 footer {
