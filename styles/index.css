@@ -5,9 +5,7 @@ body {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  background-color: rgba(32, 32, 32, 0.8431372549);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  background-color: black;
   font-family: "Encode Sans Expanded", sans-serif;
 }
 
@@ -20,6 +18,7 @@ body {
 }
 
 #whats {
+  width: 100px;
   position: fixed;
   bottom: 30px;
   margin-right: 50px;
@@ -72,7 +71,7 @@ header nav li {
 .homepage #homepage-slogan {
   text-align: center;
   color: white;
-  width: 50vw;
+  width: 50%;
   letter-spacing: 2px;
 }
 .homepage #homepage-slogan #lettering {
@@ -186,11 +185,30 @@ h3 {
 }
 
 .findme {
-  height: 100vh;
+  height: 150vh;
   background-color: rgb(250, 250, 250);
 }
 
+#mapa {
+  margin-top: 60px;
+  width: 100%;
+  height: 35%;
+}
+
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0% 5%;
+  color: rgba(250, 250, 250, 0.5);
   height: 10vh;
   background-color: black;
+  text-transform: uppercase;
+}
+footer p {
+  padding: 7px;
+  font-weight: 600;
+}
+footer span {
+  font-size: 11px;
 }/*# sourceMappingURL=index.css.map */
