@@ -83,7 +83,7 @@ header nav .focus {
 }
 
 #background {
-  background-image: url(/./assets/BACKGROUND.png);
+  background-image: url(../assets/BACKGROUND.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
