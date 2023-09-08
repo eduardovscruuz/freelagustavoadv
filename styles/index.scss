@@ -1,4 +1,4 @@
-$grafite: #202020d7;
+$grafite: rgba(48, 48, 48, 0.877);
 $gold: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #e9ba5c 8%, #a87c1d 30%, #d4aa47 40%, transparent 80%),
 radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #e9d981 8%, #d8b75b 25%, #926d17 62.5%, #9c7825 100%);;
 
@@ -6,20 +6,18 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
     background-color: black;
-    font-family: 'Encode Sans Expanded', sans-serif;}
+    font-family: 'Encode Sans Expanded';}
 
     #container {
-        width: 1920px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+        position: relative; 
+        display: flex; 
+        flex-direction: column; 
         min-height: 100vh; /* Garante que o #container tenha pelo menos a altura da viewport */
     }
     
-    #whats{
+    #whats {
         width: 9dvb;
         position: fixed;
         bottom: 30px;
@@ -48,14 +46,9 @@ body {
       }
     }
 
-     
-     
-    
-    
 
 header{
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 0 5%;
     height: 15vh;
     background-color: rgba(29, 29, 29, 0.356);
     backdrop-filter: blur(10px);
@@ -63,11 +56,8 @@ header{
     justify-content: space-between;
     align-items: center;
 
-
-
     #header-logo{
         height: 80%;
-        
     }
 
     nav{
@@ -80,7 +70,7 @@ header{
     
         li{
             margin-left: 28px;
-            font-size: 14px;
+            font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: bolder;
             letter-spacing: 2px;
@@ -93,12 +83,16 @@ header{
         color: #FEDB37;
     }
         }
+
+        .focus{
+            border-bottom: 0.3em solid rgba(255, 196, 0, 0.836);
+        }
     }
     
 }
 
 #background{
-    background-image: url(/assets/BACKGROUND3.png);
+    background-image: url(/assets/BACKGROUND.png);
     background-size: cover;
     background-repeat: no-repeat;
     
@@ -107,6 +101,7 @@ header{
 
 
 .homepage{
+    padding: 0 5%;
     background-color: $grafite;
     height: 85vh;
     display: flex;
@@ -115,23 +110,42 @@ header{
 
     
     #homepage-slogan{
-       // border: 1px solid red;
+       height: 85vh;
+       width: 100vw;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         color: white;
-        width: 50%;
         letter-spacing: 2px;
 
         #lettering{
-            width: 700px;
+            max-width: 90%;
             margin-bottom: 7px;
            padding-bottom: 40px;
-         //  border: 1px solid red;
 
         }
+        h1{
+            font-weight: 500;
+            font-size: 2vw;
+            margin-bottom: 0px;
+            text-shadow: 2px 2px 20px #00000096;
+
+        }
+        h3{
+            margin-top: 4px;
+            font-size: 1.5vw;
+            font-weight: 200;
+            text-shadow: 2px 2px 20px #00000096;
+
+        }
+            
+            
     }
 
     #big-logo{
-        width: 750px;
+        max-height: 85vh;
     }
 
 }
@@ -139,16 +153,17 @@ header{
 
 button{
     background: $gold;
-    font-weight: 900;
+    font-family: 'Encode Sans Expanded';
+    font-weight: 800;
     text-transform: uppercase;
-    width: 70%;
-    font-size: 21px;
+    width: 60%;
+    font-size: 1.2vw;
+    text-shadow: 0px 0px 15px #ffde97;
     border: none;
     border-radius: 25px;
     padding: 18px;
     margin-top: 15px ;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    transition: all 0.2s;
+    box-shadow: rgb(0, 0, 0) 15px 15px 30px -10px;    transition: all 0.2s;
     cursor: pointer;
 
     &:hover{
@@ -158,118 +173,103 @@ button{
 
 }
 
-h1{font-weight: 500;
-font-size: 32px;
-margin-bottom: 0px;}
-h3{
-    margin-top: 4px;
-    font-size: 26px;
-    font-weight: 200;}
 
-.focus{
-    border-bottom: 0.3em solid rgba(255, 196, 0, 0.836);
-}
-
-.area{
-    padding:10px;
-    margin-top: 50px;
-    background-color: white;
-    width: 320px;
-    height:300px;
-    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    button{
-        width: 80%;
-        font-size: 16px;
-    }
-
-    h4{
-        margin: 0;
-        font-size: 22px;
-    }
-    p{
-        text-align: center;
-    }
-}
 
 .title{
     margin: 0;
+    margin-bottom: 30px;
     color: white;
-    font-size: 46px;
+    font-size: 3vw;
     text-transform: uppercase;
     font-weight: 800;
     display: flex;
    justify-content: center;
    width: fit-content;
    align-items: center;
+   text-shadow: 2px 2px 20px #00000096;
    background: linear-gradient(to bottom, rgb(255, 217, 0), rgb(148, 101, 0)) no-repeat;
    background-size: 100% 5px; /* Altere a espessura aqui */
    background-position: 0 100%; /* Define a posição na parte inferior */
 }
 
+.area{
+    background-color: white;
+    width:20%;
+    box-shadow: rgb(0, 0, 0) 20px 25px 30px -10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+
+    button{
+        box-shadow: rgb(0, 0, 0) 3px 5px 4px -2px;
+        width: 80%;
+        padding: 3%;
+        font-size: 1vw;
+    }
+
+    h4{
+        margin: 0;
+        font-size: 1.5vw;
+        text-transform: uppercase;
+    }
+    p{  
+        font-size: 0.8vw;
+        text-align: center;
+    }
+}
 #atuacao{
     display: flex;
+    padding: 2% 0%;
+    justify-content: space-evenly;
+    height: 100%;
+    
 }
 
 #aboutme{
-    width: 50%;
+    width: 65%;
+    height: 85%;
     text-align: justify;
+    text-shadow: 2px 2px 20px #00000096;
 }
 .about{
     padding: 3%;
     height: 110vh;
     background-color: $grafite;
-display: flex;
-flex-direction: column;
-align-items: center;
-
-
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#profile{
-    filter: drop-shadow(4px 10px 17px #000000b4);
-}
 
-#texto{
-    color: white;
-    
-}
-    
+
+
 
 
 
 #about-1{
-    height: 45%;
-    width: 90%;
+    height: 60%;
     align-items: center;
     display: flex;
     flex-direction: column;
-}
-#atuacao{
-    height: 100%;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
 }
 
 #about-2{
     display: flex;
     justify-content: space-around;
-    height: 55%;
+    height: 40%;
     align-items: center;
 
-    img{
-        height: 400px;
+    #profile{height: 85%;
+        filter: drop-shadow(4px 10px 17px #000000b4);
     }
 
+
     #texto{
-        font-size: 20px;
+        font-size: 2.6vh;
+        color: white;
         font-weight: 500;
     }
 
@@ -277,6 +277,7 @@ align-items: center;
 
 
 .findme{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -302,6 +303,7 @@ button{
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 footer{
+    padding: 0 5%;
     display: flex;
     justify-content: center;
     align-items:center;
