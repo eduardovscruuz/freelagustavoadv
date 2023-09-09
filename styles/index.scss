@@ -1,50 +1,65 @@
 $grafite: rgba(48, 48, 48, 0.877);
 $gold: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #e9ba5c 8%, #a87c1d 30%, #d4aa47 40%, transparent 80%),
 radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #e9d981 8%, #d8b75b 25%, #926d17 62.5%, #9c7825 100%);;
+$goldClick: radial-gradient(ellipse farthest-corner at right bottom, #bda124 0%, #8b671e 8%, #976f17 30%, #bd8c1b 40%, transparent 80%),
+radial-gradient(ellipse farthest-corner at left top, #e2e0e0 0%, #c7b96d 8%, #c0a250 25%, #7c5c11 62.5%, #85651d 100%);;
 
-body {
-    margin: 0;
+body{
+    margin: auto;
     padding: 0;
+    left: 0;
     box-sizing: border-box;
-    background-color: black;
-    font-family: 'Encode Sans Expanded';}
-
-    #container {
-        width: 100%;
-        position: relative; 
-        display: flex; 
-        flex-direction: column; 
-        min-height: 100vh; /* Garante que o #container tenha pelo menos a altura da viewport */
-    }
+    background-color: rgb(37, 37, 37);
+    font-family: 'Encode Sans Expanded';
+}
+::-webkit-scrollbar{
+    width: 0.7em;
+}
+::-webkit-scrollbar-track{
+    background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 40px;
+    background-color: rgba(158, 158, 158, 0.5);
+}
+#container{
+    box-shadow: 0px 0px 60px rgba(255, 245, 187, 0.247);
+    max-width: 1920px;
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh;
+}
     
-    #whats {
-        width: 9dvb;
-        position: fixed;
-        bottom: 30px;
-        margin-right: 50px;
-        display: flex;
-        align-self: flex-end;
-        border-radius: 50%;
-        background: #32d10a;
-        box-shadow: 0 0 0 rgba(26, 216, 0, 0.747);        
-        animation: pulse 2s infinite;
-        cursor: pointer;
-        &:hover{
-            animation: none;
-        }
-      @keyframes pulse {
+#whats{
+    width: 9dvb;
+    position: fixed;
+    bottom: 30px;
+    margin-right: 50px;
+    display: flex;
+    align-self: flex-end;
+    border-radius: 50%;
+    background: #32d10a;
+    box-shadow: 0 0 0 rgba(26, 216, 0, 0.747);        
+    animation: pulse 2s infinite;
+    cursor: pointer;
+        
+    &:hover{
+        animation: none;
+    }
+    @keyframes pulse {
         0% {
           box-shadow: 0 0 0 0 rgba(21, 255, 0, 0.11);
         }
         70% {
-            transform: scale(1.1);
-            box-shadow: 0 0 0 15px rgba(43, 255, 0, 0.123);
+          transform: scale(1.1);
+          box-shadow: 0 0 0 15px rgba(43, 255, 0, 0.123);
         }
         100% {
-            box-shadow: 0 0 0 0 rgba(30, 255, 0, 0.062);
+          box-shadow: 0 0 0 0 rgba(30, 255, 0, 0.062);
         }
-      }
     }
+}
 
 
 header{
@@ -76,17 +91,18 @@ header{
             letter-spacing: 2px;
             transition: all 0.2s;
             cursor: pointer;
-    
-    &:hover{
-        transform: scale(105%);
-        transform: translateY(-10%);
-        color: #FEDB37;
-    }
-        }
 
-        .focus{
-            border-bottom: 0.3em solid rgba(255, 196, 0, 0.836);
+           
+
+            &:hover{
+                transform: scale(105%);
+                transform: translateY(-10%);
+                color: #FEDB37;
+            }
         }
+         .focus{
+                border-bottom: 0.3em solid rgba(255, 196, 0, 0.836);
+            }
     }
     
 }
@@ -97,8 +113,6 @@ header{
     background-repeat: repeat;
     
 }
-
-
 
 .homepage{
     padding: 0 5%;
@@ -157,7 +171,7 @@ button{
     font-weight: 800;
     text-transform: uppercase;
     width: 60%;
-    font-size: 1.2vw;
+    font-size: 1vw;
     text-shadow: 0px 0px 15px #ffde97;
     border: none;
     border-radius: 25px;
@@ -167,9 +181,14 @@ button{
     cursor: pointer;
 
     &:hover{
-        transform: scale(105%);
         transform: translateY(-10%);
     }
+
+    &:active{
+        background: $goldClick;
+    }
+
+   
 
 }
 
@@ -179,7 +198,7 @@ button{
     margin: 0;
     margin-bottom: 30px;
     color: white;
-    font-size: 3vw;
+    font-size: 2vw;
     text-transform: uppercase;
     font-weight: 800;
     display: flex;
@@ -302,8 +321,107 @@ button{
     height: 35%;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
+
+#contacts-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    height: 55%;
+
+    img{
+        height: 80%;
+        padding-right: 3%;
+        filter: drop-shadow(4px 4px 4px #333);
+
+    }
+
+    p{
+        font-weight: 800;
+        font-size: 2.2vh;
+    }
+}
+
+#all-contacts{
+    height: 60%;
+    width: fit-content;
+}
+#contact{
+    display: flex;
+    align-items: center;
+    height: 25%;
+    padding: 1% 3%;
+    cursor: pointer;
+
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.219) 0px 0px 20px -2px;
+        border-radius: 15px;
+    }
+    &:active{
+        background-color: rgba(0, 0, 0, 0.030);
+        box-shadow: rgba(0, 0, 0, 0.473) 0px 0px 15px -2px;
+        border-radius: 15px;
+    }
+}
+
+#email-container{
+    height: 80%;
+    width: 55%;
+    border: 3px solid blueviolet;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    button{
+        position: unset;
+        transform: unset;
+        width: 85%;
+        margin: 0 15%;
+    width: 70%;
+    }
+    
+ }
+
+// #email-form{
+//     display: flex;
+//     flex-direction: column;
+//     padding: 2%;
+//     height: 100%;
+   
+// }
+
+// input, textarea {
+//     width: 100%;
+//     margin-bottom: 15px;
+//     height: 20%;
+//     padding: 2% 0%;
+//     border-radius: 5px;
+//     border: none;
+//     outline: none;
+//     resize: none;
+//     border: 1px solid red
+//   }
+
+//   textarea {
+//     height: 100%;
+    
+//   }
+
+// #nameemail{
+//     height: 50%;
+//     border: 5px solid blue;
+// }
+
+
+// #message{
+//     height: 100%;
+// }
+
+// #email-message{
+//     height: 50%;
+// }
+
+
 footer{
-    padding: 0 5%;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -317,3 +435,12 @@ footer{
     span{font-size: 11px;
     }
 }
+
+@media screen and (min-width: 1921px) {
+    body {
+display: flex;
+justify-content: center;    }
+
+.homepage #homepage-slogan h1{
+    font-size: 1.7vw;}
+  }
