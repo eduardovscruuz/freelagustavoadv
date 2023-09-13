@@ -98,7 +98,7 @@ header nav .focus {
 }
 
 #background {
-  background: url(../assets/BACKGROUND.png);
+  background: url(../assets/background.png);
   background-size: cover;
   background-repeat: repeat;
 }
