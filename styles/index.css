@@ -320,7 +320,6 @@ header nav .focus {
   align-items: center;
   height: 25%;
   padding: 0 3%;
-  cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 15px;
 }
