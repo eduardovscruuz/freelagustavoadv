@@ -16,34 +16,40 @@
   </head>
   <body>
     <div id="container">
-      <img
+      <a
         id="whats"
-        src="./assets/whatsapp-buttton.png"
-        alt="whatsapp button"
-      />
+        href="https://api.whatsapp.com/send?phone=+55(91)%2098186-5489&text=Ol%C3%A1%21+%F0%9F%91%8B%0A%0AGostaria+de+falar+com+o+advogado+Gustavo+Gouv%C3%AAa%2C+vim+atrav%C3%A9s+do+site%21"
+        target="_blank"
+      >
+        <img src="./assets/whatsapp-buttton.png" alt="whatsapp button" />
+      </a>
       <div id="background">
         <header>
           <img id="header-logo" src="./assets/logo.png" alt="logo" />
 
           <nav>
-            <li class="focus">Início</li>
-            <li>Áreas de Atuação</li>
-            <li>Sobre Mim</li>
-            <li>Localização</li>
-            <li>Contato</li>
+            <a href="#homepage" class="focus">Início</a>
+            <a href="#about">Áreas de Atuação</a>
+            <a href="#about">Sobre Mim</a>
+            <a href="#findme">Localização</a>
+            <a href="#contacts-container">Contato</a>
           </nav>
         </header>
-        <section class="homepage">
+        <section id="homepage">
           <div id="homepage-slogan">
             <img id="lettering" src="./assets/lettering.png" alt="lettering" />
             <h1>Soluções Jurídicas Confiáveis e Eficazes</h1>
             <h3>Minha missão é o sucesso da sua causa!</h3>
-            <button>Fale diretamete comigo!</button>
+            <a
+              class="falecmg-btn"
+              href="https://api.whatsapp.com/send?phone=+55(91)%2098186-5489&text=Ol%C3%A1%21+%F0%9F%91%8B%0A%0AGostaria+de+falar+com+o+advogado+Gustavo+Gouv%C3%AAa%2C+vim+atrav%C3%A9s+do+site%21"
+              >Fale diretamete comigo!</a
+            >
           </div>
           <img id="big-logo" src="./assets/logo.png" alt="logo" />
         </section>
 
-        <section class="about">
+        <section id="about">
           <div id="about-1">
             <p class="title">Áreas de Atuação</p>
             <div id="atuacao">
@@ -57,7 +63,7 @@
                   O direito trabalhista é aquele que versa diretamente sobre o
                   contrato de trabalho e outras questões.
                 </p>
-                <button>+ Informações</button>
+                <a class="falecmg-btn">+ Informações</a>
               </div>
               <div class="area">
                 <img
@@ -69,7 +75,7 @@
                   O direito trabalhista é aquele que versa diretamente sobre o
                   contrato de trabalho e outras questões.
                 </p>
-                <button>+ Informações</button>
+                <a class="falecmg-btn">+ Informações</a>
               </div>
               <div class="area">
                 <img
@@ -81,7 +87,7 @@
                   O direito trabalhista é aquele que versa diretamente sobre o
                   contrato de trabalho e outras questões.
                 </p>
-                <button>+ Informações</button>
+                <a class="falecmg-btn">+ Informações</a>
               </div>
               <div class="area">
                 <img
@@ -93,7 +99,7 @@
                   O direito trabalhista é aquele que versa diretamente sobre o
                   contrato de trabalho e outras questões.
                 </p>
-                <button>+ Informações</button>
+                <a class="falecmg-btn">+ Informações</a>
               </div>
             </div>
           </div>
@@ -122,12 +128,16 @@
         </section>
       </div>
 
-      <section class="findme">
-        <button>Fale diretamete comigo!</button>
+      <section id="findme">
+        <a
+          class="falecmg-btn"
+          href="https://api.whatsapp.com/send?phone=+55(91)%2098186-5489&text=Ol%C3%A1%21+%F0%9F%91%8B%0A%0AGostaria+de+falar+com+o+advogado+Gustavo+Gouv%C3%AAa%2C+vim+atrav%C3%A9s+do+site%21"
+          >Fale diretamete comigo!</a
+        >
 
         <iframe
           id="mapa"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14701.833130697885!2d-43.1239271!3d-22.8964615!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9983db2748ab47%3A0x2149de2763f63c60!2sPlaza%20Niter%C3%B3i!5e0!3m2!1spt-BR!2sbr!4v1694063805135!5m2!1spt-BR!2sbr"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6520284583457!2d-48.44390442429435!3d-1.385400298601504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48a607e60d1cf%3A0xbcd07706af26e3c1!2sAv.%20dos%20Planetas%2C%20450%20-%20Mangueir%C3%A3o%2C%20Bel%C3%A9m%20-%20PA%2C%2066640-002!5e0!3m2!1spt-BR!2sbr!4v1694644466381!5m2!1spt-BR!2sbr"
           width="1920"
           height="600"
           style="border: 0"
@@ -140,19 +150,19 @@
           <div id="all-contacts">
             <div id="contact">
               <img src="./assets/map-icon.png" alt="icone mapa" />
-              <p>Rua Malafaia Tavares, 208, Centro - RJ</p>
+              <p>Avenida dos Planetas, 450, Mangueirão - Belém-PA</p>
             </div>
             <div id="contact">
               <img src="./assets/gmail-icon.png" alt="icone email" />
-              <p>gustavogouvea@gmail.com</p>
+              <p>gouveagustavo.adv@gmail.com</p>
             </div>
             <div id="contact">
               <img src="./assets/oab-icon.png" alt="icone oab" />
-              <p>OAB/SP 564.535</p>
+              <p>OAB/PA 36710</p>
             </div>
             <div id="contact">
               <img src="./assets/whatsapp-icon.png" alt="icone whatsapp" />
-              <p>+55 (91) 99253-1101</p>
+              <p>+55 (91) 98186-5489</p>
             </div>
           </div>
 
@@ -180,7 +190,9 @@
                 placeholder="Insira sua mensagem"
                 required
               ></textarea>
-              <button name="submit" type="submit">ENVIAR</button>
+              <button class="falecmg-btn" name="submit" type="submit">
+                ENVIAR
+              </button>
             </form>
           </div>
         </div>

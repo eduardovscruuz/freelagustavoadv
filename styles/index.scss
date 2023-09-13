@@ -9,7 +9,7 @@ body{
     padding: 0;
     left: 0;
     box-sizing: border-box;
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(0, 0, 0);
     font-family: 'Encode Sans Expanded', sans-serif;
 }
 ::-webkit-scrollbar{
@@ -23,7 +23,7 @@ body{
     background-color: rgba(158, 158, 158, 0.5);
 }
 #container{
-    box-shadow: 0px 0px 60px rgba(255, 245, 187, 0.247);
+    box-shadow: 0px 0px 40px rgba(255, 245, 187, 0.20);
     max-width: 1920px;
     position: relative; 
     display: flex; 
@@ -32,25 +32,14 @@ body{
 }
     
 #whats{
-    width: 9dvb;
+    width: 7dvb;
     position: fixed;
     bottom: 30px;
     margin-right: 50px;
     display: flex;
     align-self: flex-end;
-    border-radius: 50%;
-    background: #32d10a;
-    box-shadow: 0 0 0 rgba(26, 216, 0, 0.747);        
-    animation: pulse 2s infinite;
     cursor: pointer;
-        
-    &:hover{
-        animation: none;
-    }
 
-    &:active{
-        opacity: 0.8;
-    }
     @keyframes pulse {
         0% {
           box-shadow: 0 0 0 0 rgba(21, 255, 0, 0.11);
@@ -63,6 +52,21 @@ body{
           box-shadow: 0 0 0 0 rgba(30, 255, 0, 0.062);
         }
     }
+    
+        img{
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            background: #32d10a;
+            box-shadow: 0 0 0 rgba(26, 216, 0, 0.747); 
+            &:hover{
+                animation: none;
+            }
+        
+            &:active{
+                transform: scale(110%);
+            }
+        }
+
 }
 
 
@@ -82,18 +86,20 @@ header{
     nav{
         display: flex;
         align-items: center;
-        color: white;
+        
         list-style: none;
         text-decoration: none;
 
     
-        li{
+        a{
+            color: white;
             margin-left: 28px;
             font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: bolder;
             letter-spacing: 2px;
             transition: all 0.2s;
+            text-decoration: none;
             cursor: pointer;
 
            
@@ -119,7 +125,7 @@ header{
     
 }
 
-.homepage{
+#homepage{
     padding: 0 5%;
     background-color: $grafite;
     height: 85vh;
@@ -170,11 +176,14 @@ header{
 }
 
 
-button{
+.falecmg-btn{
     background: $gold;
     font-family: 'Encode Sans Expanded';
+    text-decoration: none;
+    color: black;
     font-weight: 800;
     text-transform: uppercase;
+    text-align: center;
     width: 60%;
     font-size: 1vw;
     text-shadow: 0px 0px 15px #ffde97;
@@ -227,7 +236,7 @@ button{
     align-items: center;
     padding: 1%;
 
-    button{
+    a{
         box-shadow: rgb(0, 0, 0) 3px 5px 4px -2px;
         width: 80%;
         padding: 3%;
@@ -258,7 +267,7 @@ button{
     text-align: justify;
     text-shadow: 2px 2px 20px #00000096;
 }
-.about{
+#about{
     padding: 3%;
     height: 110vh;
     background-color: $grafite;
@@ -300,7 +309,7 @@ button{
 }
 
 
-.findme{
+#findme{
     
     display: flex;
     flex-direction: column;
@@ -308,7 +317,7 @@ button{
 height: 150vh;
 background-color: rgb(240, 240, 240);
 
-button{
+a{
     position: absolute;
     transform: translateY(-75%);
     width: 30%;
@@ -385,6 +394,7 @@ button{
         width: 95%;
         padding: 2%;
         margin: 0 15%;
+        box-shadow: rgb(0, 0, 0) 10px 10px 10px -10px; 
 
         &:hover{
             transform: translateY(-10%);

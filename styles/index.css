@@ -4,7 +4,7 @@ body {
   padding: 0;
   left: 0;
   box-sizing: border-box;
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(0, 0, 0);
   font-family: "Encode Sans Expanded", sans-serif;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 #container {
-  box-shadow: 0px 0px 60px rgba(255, 245, 187, 0.247);
+  box-shadow: 0px 0px 40px rgba(255, 245, 187, 0.2);
   max-width: 1920px;
   position: relative;
   display: flex;
@@ -31,23 +31,13 @@ body {
 }
 
 #whats {
-  width: 9dvb;
+  width: 7dvb;
   position: fixed;
   bottom: 30px;
   margin-right: 50px;
   display: flex;
   align-self: flex-end;
-  border-radius: 50%;
-  background: #32d10a;
-  box-shadow: 0 0 0 rgba(26, 216, 0, 0.747);
-  animation: pulse 2s infinite;
   cursor: pointer;
-}
-#whats:hover {
-  animation: none;
-}
-#whats:active {
-  opacity: 0.8;
 }
 @keyframes pulse {
   0% {
@@ -60,6 +50,18 @@ body {
   100% {
     box-shadow: 0 0 0 0 rgba(30, 255, 0, 0.062);
   }
+}
+#whats img {
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  background: #32d10a;
+  box-shadow: 0 0 0 rgba(26, 216, 0, 0.747);
+}
+#whats img:hover {
+  animation: none;
+}
+#whats img:active {
+  transform: scale(110%);
 }
 
 header {
@@ -78,20 +80,21 @@ header #header-logo {
 header nav {
   display: flex;
   align-items: center;
-  color: white;
   list-style: none;
   text-decoration: none;
 }
-header nav li {
+header nav a {
+  color: white;
   margin-left: 28px;
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: bolder;
   letter-spacing: 2px;
   transition: all 0.2s;
+  text-decoration: none;
   cursor: pointer;
 }
-header nav li:hover {
+header nav a:hover {
   transform: scale(105%);
   transform: translateY(-10%);
   color: #FEDB37;
@@ -107,7 +110,7 @@ header nav .focus {
   background-attachment: fixed;
 }
 
-.homepage {
+#homepage {
   padding: 0 5%;
   background-color: rgba(48, 48, 48, 0.877);
   height: 85vh;
@@ -115,7 +118,7 @@ header nav .focus {
   justify-content: center;
   align-items: center;
 }
-.homepage #homepage-slogan {
+#homepage #homepage-slogan {
   height: 85vh;
   width: 100vw;
   text-align: center;
@@ -126,32 +129,35 @@ header nav .focus {
   color: white;
   letter-spacing: 2px;
 }
-.homepage #homepage-slogan #lettering {
+#homepage #homepage-slogan #lettering {
   max-width: 90%;
   margin-bottom: 7px;
   padding-bottom: 40px;
 }
-.homepage #homepage-slogan h1 {
+#homepage #homepage-slogan h1 {
   font-weight: 500;
   font-size: 2vw;
   margin-bottom: 0px;
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5882352941);
 }
-.homepage #homepage-slogan h3 {
+#homepage #homepage-slogan h3 {
   margin-top: 4px;
   font-size: 1.5vw;
   font-weight: 200;
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5882352941);
 }
-.homepage #big-logo {
+#homepage #big-logo {
   max-height: 85vh;
 }
 
-button {
+.falecmg-btn {
   background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #e9ba5c 8%, #a87c1d 30%, #d4aa47 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #e9d981 8%, #d8b75b 25%, #926d17 62.5%, #9c7825 100%);
   font-family: "Encode Sans Expanded";
+  text-decoration: none;
+  color: black;
   font-weight: 800;
   text-transform: uppercase;
+  text-align: center;
   width: 60%;
   font-size: 1vw;
   text-shadow: 0px 0px 15px #ffde97;
@@ -163,10 +169,10 @@ button {
   transition: all 0.2s;
   cursor: pointer;
 }
-button:hover {
+.falecmg-btn:hover {
   transform: translateY(-10%);
 }
-button:active {
+.falecmg-btn:active {
   background: radial-gradient(ellipse farthest-corner at right bottom, #bda124 0%, #8b671e 8%, #976f17 30%, #bd8c1b 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #e2e0e0 0%, #c7b96d 8%, #c0a250 25%, #7c5c11 62.5%, #85651d 100%);
 }
 
@@ -199,7 +205,7 @@ button:active {
   align-items: center;
   padding: 1%;
 }
-.area button {
+.area a {
   box-shadow: rgb(0, 0, 0) 3px 5px 4px -2px;
   width: 80%;
   padding: 3%;
@@ -229,7 +235,7 @@ button:active {
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5882352941);
 }
 
-.about {
+#about {
   padding: 3%;
   height: 110vh;
   background-color: rgba(48, 48, 48, 0.877);
@@ -261,20 +267,20 @@ button:active {
   font-weight: 500;
 }
 
-.findme {
+#findme {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 150vh;
   background-color: rgb(240, 240, 240);
 }
-.findme button {
+#findme a {
   position: absolute;
   transform: translateY(-75%);
   width: 30%;
   box-shadow: rgb(0, 0, 0) 10px 10px 10px -10px;
 }
-.findme button:hover {
+#findme a:hover {
   transform: translateY(-85%);
 }
 
@@ -340,6 +346,7 @@ button:active {
   width: 95%;
   padding: 2%;
   margin: 0 15%;
+  box-shadow: rgb(0, 0, 0) 10px 10px 10px -10px;
 }
 #email-container button:hover {
   transform: translateY(-10%);
