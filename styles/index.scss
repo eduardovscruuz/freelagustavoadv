@@ -32,10 +32,9 @@ body{
 }
     
 #whats{
-    width: 7dvb;
     position: fixed;
     bottom: 30px;
-    margin-right: 50px;
+    margin-right: 30px;
     display: flex;
     align-self: flex-end;
     cursor: pointer;
@@ -54,6 +53,7 @@ body{
     }
     
         img{
+            width: 60px;
             border-radius: 50%;
             animation: pulse 2s infinite;
             background: #32d10a;
@@ -83,37 +83,84 @@ header{
         height: 80%;
     }
 
-    nav{
+    nav {
+        display: inline-block;
+        border-radius: 30px;
+        animation: slide-in 1s ease-out;
+      }
+      
+      ul {
+        position: relative;
         display: flex;
-        align-items: center;
+        flex: 1 1 auto;
+        margin: 0;
+        padding: 0 3px;
+        list-style-type: none;
         
-        list-style: none;
-        text-decoration: none;
-
-    
-        a{
+        li {
+          border: 2px solid transparent;
+          border-radius: 5px;
+          padding: 10px;
+          transition: background 0.2s;
+          a {
+            font-size: 13px;
             color: white;
-            margin-left: 28px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: bolder;
-            letter-spacing: 2px;
-            transition: all 0.2s;
+            font-weight: 800;
             text-decoration: none;
-            cursor: pointer;
-
-           
-
-            &:hover{
-                transform: scale(105%);
-                transform: translateY(-10%);
-                color: #FEDB37;
+            text-transform: uppercase;
+            transition: color 0.2s;
+          }
+          ul {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            display: block;
+            margin: 12px -12px;
+            padding: 0;
+            background: #000000;
+            border: 2px solid #444444;
+            border-radius: 5px;
+            transition: opacity 0.2s, visibility 0.2s;
+            li {
+              margin: -2px 0 0 -2px;
+              width: calc(100% - 20px);
+              line-height: 1.7;
+             
             }
+          }
+          &:hover {
+            background: #444444;
+            a {
+              color: #ffffff;
+            }
+            ul {
+              visibility: visible;
+              opacity: 1;
+              box-shadow: 0px 2px 10px 1px #000000;
+              li {
+                a {
+                  color: #F9F8FD;
+                }
+              }
+            }
+          }
         }
-         .focus{
-                border-bottom: 0.3em solid rgba(255, 196, 0, 0.836);
-            }
-    }
+      }
+      
+      @keyframes slide-in {
+        0% {
+          top: -50px;
+        }
+        40% {
+          top: 20px;
+        }
+        70% {
+          top: 10px;
+        }
+        100% {
+          top: 15px;
+        }
+      }
     
 }
 
@@ -235,22 +282,29 @@ header{
     justify-content: center;
     align-items: center;
     padding: 1%;
+    text-align: center;
+
+    img{
+        width: 30%;
+        padding: 5%;
+    }
 
     a{
         box-shadow: rgb(0, 0, 0) 3px 5px 4px -2px;
         width: 80%;
         padding: 3%;
         font-size: 1vw;
+        
     }
 
     h4{
         margin: 0;
-        font-size: 1.5vw;
+        font-size: 1.2vw;
         text-transform: uppercase;
     }
     p{  
-        font-size: 0.8vw;
-        text-align: center;
+        font-size: 0.9vw;
+        
     }
 }
 #atuacao{
@@ -440,9 +494,10 @@ footer{
     height: 10vh;
     background-color: black;
     text-transform:uppercase;
+    font-size: 12px;
         
     p{padding: 7px;font-weight: 600;}
-    span{font-size: 11px;
+    span{font-size: 9px;
     }
 }
 
@@ -451,6 +506,37 @@ footer{
 display: flex;
 justify-content: center;    }
 
-.homepage #homepage-slogan h1{
+#homepage #homepage-slogan h1{
     font-size: 1.7vw;}
+    
+    .area{
+    
+        a, p{
+            font-size: 16px;
+        }
+
+        h4{
+            font-size: 25px;
+        }
+
+        img{
+            width: 128px;
+        }
+        
+            
+    }
+    .title{
+            font-size: 42px;
+        }
+    #about-2{
+
+        
+
+        #texto{
+            font-size: 21px;
+        }
+        
+    }
+
   }
+
