@@ -67,3 +67,45 @@ const showInfoButtons = document.querySelectorAll('.info-btn');
                 });
             });
         });
+
+// define all UI variable
+const navToggler = document.querySelector('.nav-toggler');
+const navMenu = document.querySelector('.site-navbar ul');
+const navLinks = document.querySelectorAll('.site-navbar a');
+
+// load all event listners
+allEventListners();
+
+// functions of all event listners
+function allEventListners() {
+  // toggler icon click event
+  navToggler.addEventListener('click', togglerClick);
+  // nav links click event
+  navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
+}
+
+// togglerClick function
+function togglerClick() {
+  navToggler.classList.toggle('toggler-open');
+  navMenu.classList.toggle('open');
+
+    document.body.style.overflow = 'hidden'
+  if(infoOverlay.style.display === 'flex'){
+    infoOverlay.style.display = 'none'
+    document.body.style.overflow = 'auto'
+
+  }
+  else if(infoOverlay.style.display = 'none'){
+    infoOverlay.style.display = 'flex'
+
+  }
+  infoOverlay.style.opacity = '1'
+  infoOverlay.style.zIndex = '0'
+}
+
+// navLinkClick function
+function navLinkClick() {
+  if(navMenu.classList.contains('open')) {
+    navToggler.click();
+  }
+}

@@ -24,22 +24,32 @@
         <img src="./assets/whatsapp-buttton.png" alt="whatsapp button" />
       </a>
       <div id="background">
-        <header>
-          <img id="header-logo" src="./assets/logo.png" alt="logo" />
+        <header class="header-area">
+          <!-- site-navbar start -->
+          <div class="navbar-area">
+            <div class="containere">
+              <nav class="site-navbar">
+                <!-- site logo -->
+                <img id="header-logo" src="./assets/logo.png" alt="logo" />
 
-          <nav>
-            <ul>
-              <li><a href="#homepage">Início</a></li>
+                <!-- site menu/nav -->
+                <ul>
+                  <li><a href="#homepage">Início</a></li>
+                  <li><a href="#about-1">Áreas de Atuação</a></li>
+                  <li><a href="#aboutme">Sobre Mim</a></li>
+                  <li><a href="#map">Localização</a></li>
+                  <li><a href="#all-contacts">Contato</a></li>
+                </ul>
 
-              <li><a href="#about-1">Áreas de Atuação</a></li>
-
-              <li><a href="#aboutme">Sobre Mim</a></li>
-              <li><a href="#map">Localização</a></li>
-              <li><a href="#all-contacts">Contato</a></li>
-            </ul>
-          </nav>
+                <!-- nav-toggler for mobile version only -->
+                <button class="nav-toggler">
+                  <span></span>
+                </button>
+              </nav>
+            </div>
+          </div>
+          <!-- navbar-area end -->
         </header>
-
         <section id="homepage">
           <div id="homepage-slogan">
             <img id="lettering" src="./assets/lettering.png" alt="lettering" />
@@ -53,7 +63,6 @@
           </div>
           <img id="big-logo" src="./assets/logo.png" alt="logo" />
         </section>
-
         <section id="about">
           <p class="animate from-top-text title">Áreas de Atuação</p>
           <div class="animate from-bottom" id="about-1">
@@ -71,7 +80,9 @@
               <div class="area">
                 <img src="./assets/fiscal.png" alt="execução fiscal" />
                 <h4>Execução Fiscal</h4>
-                <p>Sua defesa técnica em seus desafios em execuções fiscais.</p>
+                <p>
+                  Sua defesa técnica em seus desafios nas execuções fiscais.
+                </p>
                 <a class="falecmg-btn info-btn fiscal">+ Informações</a>
               </div>
               <div class="area">
@@ -189,10 +200,12 @@
       </section>
 
       <footer>
-        <p>© 2023 - Gustavo Gouvêa Advocacia - Todos os Direitos Reservados.</p>
+        <p>© 2023 - Gustavo Gouvêa Advogado - Todos os Direitos Reservados.</p>
         <span
           >Desenvolvido por
-          <a href="http://" target="_blank">Eduardo Cruz</a></span
+          <a href="https://eduardovscruuz.github.io/portfolio/" target="_blank"
+            >Eduardo Cruz</a
+          ></span
         >
       </footer>
 
