@@ -689,7 +689,7 @@ footer span a {
   .title {
     margin-bottom: 3%;
     font-size: 4vw;
-    background-size: 100% 2px; /* Altere a espessura aqui */
+    background-size: 100% 2px;
   }
   .area {
     width: 100%;
