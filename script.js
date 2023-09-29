@@ -109,3 +109,62 @@ function navLinkClick() {
     navToggler.click();
   }
 }
+
+
+
+
+    // Get a reference to the form element
+    const form = document.getElementById('email-form');
+    const sendMessage = document.querySelector('#sendMessage')
+    // Listen for the form's submit event
+    form.addEventListener('submit', event => {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+  
+      // Create a new FormData object
+      const formData = new FormData(form);
+      console.log('Enviando....');
+      // Send the form data asynchronously
+      console.log('formData:', formData);
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+      })
+  
+  
+        .then(response => {
+          if (response.ok) {
+            // The email was sent successfully
+            console.log('Email enviado com sucesso!');
+            form.reset();
+  
+            sendMessage.innerHTML = 'Email enviado com sucesso!'
+            sendMessage.style.opacity = 1
+            sendMessage.style.transform = 'translateY(8px)'
+            setTimeout(() => {
+              sendMessage.style.opacity = 0;
+              sendMessage.style.transform = 'translateY(0)';
+            }, 2400);
+          } else {
+            // There was an error sending the email
+  
+            console.error('Erro ao enviar email');
+  
+          }
+        })
+        .catch(error => {
+          sendMessage.innerHTML = 'Erro ao enviar email!'
+          sendMessage.style.color = 'red'
+          sendMessage.style.display = "block"
+          sendMessage.style.opacity = 1
+          sendMessage.style.transform = 'translateY(8px)'
+          setTimeout(() => {
+            sendMessage.style.opacity = 0;
+            sendMessage.style.transform = 'translateY(0)';
+          }, 2400);
+          // There was an error sending the email
+  
+          console.error('Erro ao enviar email:', error);
+        });
+    });
+  

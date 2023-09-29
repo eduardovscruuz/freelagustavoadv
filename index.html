@@ -176,7 +176,12 @@
           </div>
 
           <div class="animate from-right" id="email-container">
-            <form id="email-form">
+            <form
+              id="email-form"
+              action="https://nodemailer-api.vercel.app/send-email"
+              method="POST"
+              enctype="multipart/form-data"
+            >
               <input
                 type="text"
                 id="name"
@@ -202,6 +207,7 @@
               <button class="falecmg-btn" name="submit" type="submit">
                 ENVIAR
               </button>
+              <p id="sendMessage">.</p>
             </form>
           </div>
         </div>
