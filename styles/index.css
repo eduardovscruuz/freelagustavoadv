@@ -590,6 +590,14 @@ footer span a {
   opacity: 0.8;
 }
 
+#sendMessage {
+  bottom: 0vh;
+  position: absolute;
+  display: none;
+  margin: 0;
+  transition: all 0.2s;
+}
+
 @media screen and (min-width: 1921px) {
   body {
     display: flex;
@@ -774,6 +782,9 @@ footer span a {
   }
   #email-form input, #email-form textarea {
     padding: 4%;
+  }
+  #sendMessage {
+    bottom: 3vh;
   }
   footer {
     flex-direction: column;

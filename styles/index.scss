@@ -626,7 +626,14 @@ footer{
     
 }
 
+#sendMessage{    bottom: 0vh;
+    position: absolute;
+    display: none;
+    margin: 0;
 
+    transition: all 0.2s;
+    
+}
 
 
 @media screen and (min-width: 1921px) {
@@ -899,6 +906,9 @@ justify-content: center;    }
         }
     
        
+    }
+    
+    #sendMessage{    bottom: 3vh;
     }
     
     
