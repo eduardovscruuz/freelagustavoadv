@@ -1,4 +1,5 @@
 const form = document.getElementById('email-form');
+const sendMessage = document.querySelector('#sendMessage');
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -12,26 +13,19 @@ form.addEventListener('submit', event => {
   })
     .then(response => {
       if (response.ok) {
-        console.log('Email enviado com sucesso!');
-        form.reset();
-
-        // Display a success alert
+        console.log('Email enviado com sucesso!')
         alert('Email enviado com sucesso!');
+        form.reset();;
       } else {
         console.error('Erro ao enviar email');
-
-        // Display an error alert
         alert('Erro ao enviar email!');
       }
     })
     .catch(error => {
       console.error('Erro ao enviar email:', error);
-
-      // Display an error alert
       alert('Erro ao enviar email!');
     });
 });
-
 
 
 const intersectObserver = new IntersectionObserver(
