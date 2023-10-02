@@ -1,3 +1,40 @@
+const form = document.getElementById('email-form');
+const sendMessage = document.querySelector('#sendMessage');
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  console.log('Enviando....');
+
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+  })
+    .then(response => {
+      if (response.ok) {
+        console.log('Email enviado com sucesso!');
+        form.reset();
+
+        sendMessage.innerHTML = 'Email enviado com sucesso!';
+        sendMessage.style.opacity = 1;
+        sendMessage.style.transform = 'translateY(8px)';
+        setTimeout(() => {
+          sendMessage.style.opacity = 0;
+          sendMessage.style.transform = 'translateY(0)';
+        }, 2400);
+      } else {
+        console.error('Erro ao enviar email');
+        alert('Erro ao enviar email!');
+      }
+    })
+    .catch(error => {
+      console.error('Erro ao enviar email:', error);
+      alert('Erro ao enviar email!');
+    });
+});
+
+
 const intersectObserver = new IntersectionObserver(
     entries => {
     entries.forEach(entry => {
@@ -109,40 +146,3 @@ function navLinkClick() {
     navToggler.click();
   }
 }
-
-
-const form = document.getElementById('email-form');
-const sendMessage = document.querySelector('#sendMessage');
-
-form.addEventListener('submit', event => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-  console.log('Enviando....');
-
-  fetch(form.action, {
-    method: form.method,
-    body: formData,
-  })
-    .then(response => {
-      if (response.ok) {
-        console.log('Email enviado com sucesso!');
-        form.reset();
-
-        sendMessage.innerHTML = 'Email enviado com sucesso!';
-        sendMessage.style.opacity = 1;
-        sendMessage.style.transform = 'translateY(8px)';
-        setTimeout(() => {
-          sendMessage.style.opacity = 0;
-          sendMessage.style.transform = 'translateY(0)';
-        }, 2400);
-      } else {
-        console.error('Erro ao enviar email');
-        alert('Erro ao enviar email!');
-      }
-    })
-    .catch(error => {
-      console.error('Erro ao enviar email:', error);
-      alert('Erro ao enviar email!');
-    });
-});
