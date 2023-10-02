@@ -1,5 +1,4 @@
 const form = document.getElementById('email-form');
-const sendMessage = document.querySelector('#sendMessage');
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -16,23 +15,23 @@ form.addEventListener('submit', event => {
         console.log('Email enviado com sucesso!');
         form.reset();
 
-        sendMessage.innerHTML = 'Email enviado com sucesso!';
-        sendMessage.style.opacity = 1;
-        sendMessage.style.transform = 'translateY(8px)';
-        setTimeout(() => {
-          sendMessage.style.opacity = 0;
-          sendMessage.style.transform = 'translateY(0)';
-        }, 2400);
+        // Display a success alert
+        alert('Email enviado com sucesso!');
       } else {
         console.error('Erro ao enviar email');
+
+        // Display an error alert
         alert('Erro ao enviar email!');
       }
     })
     .catch(error => {
       console.error('Erro ao enviar email:', error);
+
+      // Display an error alert
       alert('Erro ao enviar email!');
     });
 });
+
 
 
 const intersectObserver = new IntersectionObserver(
