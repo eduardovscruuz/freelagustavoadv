@@ -230,7 +230,7 @@ body {
 }
 
 .falecmg-btn {
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #e9ba5c 8%, #a87c1d 30%, #d4aa47 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #e9d981 8%, #d8b75b 25%, #926d17 62.5%, #9c7825 100%);
+  background: radial-gradient(ellipse farthest-corner at right bottom, #fedb37 0%, #e9ba5c 8%, #a87c1d 30%, #d4aa47 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #e9d981 8%, #d8b75b 25%, #926d17 62.5%, #9c7825 100%);
   font-family: "Encode Sans Expanded";
   text-decoration: none;
   color: black;
@@ -309,14 +309,17 @@ body {
 
 #atuacao {
   display: flex;
+  flex-wrap: wrap;
   padding: 2% 0%;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 100%;
+}
+#atuacao div {
+  margin: 10px;
 }
 
 #about {
   padding: 3%;
-  height: 125vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -328,6 +331,7 @@ body {
   justify-content: center;
   height: 80%;
   text-align: justify;
+  margin: 50px 0;
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5882352941);
 }
 
@@ -342,7 +346,6 @@ body {
   width: 90%;
   display: flex;
   justify-content: space-around;
-  height: 40%;
   align-items: center;
 }
 #about-2 #texto {
@@ -446,7 +449,8 @@ body {
   align-items: center;
   padding: 2%;
 }
-#email-form input, #email-form textarea {
+#email-form input,
+#email-form textarea {
   box-shadow: rgba(0, 0, 0, 0.4) 1px 3px 6px;
   height: 2%;
   padding: 2%;
@@ -557,7 +561,8 @@ footer span a {
   font-size: 2.5vw;
   margin: 2% 0;
 }
-.info-popup h2, .info-popup p {
+.info-popup h2,
+.info-popup p {
   padding: 0 12%;
 }
 
@@ -606,7 +611,8 @@ footer span a {
   #homepage #homepage-slogan h1 {
     font-size: 1.7vw;
   }
-  .area a, .area p {
+  .area a,
+  .area p {
     font-size: 16px;
   }
   .area h4 {
@@ -700,7 +706,7 @@ footer span a {
   }
   .area {
     width: 100%;
-    height: 30vh;
+    height: 100%;
     margin: 1% 0;
   }
   .area img {
@@ -721,55 +727,66 @@ footer span a {
             hyphens: auto;
   }
   #atuacao {
-    height: 60vh;
-    display: grid;
-    grid-template-columns: 45% 45%;
-    grid-row: auto auto;
-    grid-column-gap: 0%;
-    grid-row-gap: 1%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #atuacao div {
+    margin: unset;
+    height: 80%;
+    width: 90%;
+    margin: 10px 0;
+    padding: 10% 0;
+  }
+  #atuacao div img {
+    height: 30px;
+    width: 30px;
+    padding: 2%;
   }
   #about {
-    height: 100vh;
+    height: auto;
   }
   #aboutme {
-    height: 40%;
+    height: unset;
   }
   #about-1 {
-    height: -moz-fit-content;
-    height: fit-content;
+    height: auto;
   }
   #about-2 #texto {
     font-size: 2.6vw;
   }
   #findme {
-    height: 130vh;
+    height: 100%;
   }
   #findme a {
     width: 60%;
   }
-  .mapa {
-    margin-top: 15%;
-    height: 25%;
-  }
   #contacts-container {
     flex-direction: column;
-    height: 75%;
+    height: 45%;
+    padding: 5%;
   }
   #contacts-container img {
-    height: 45%;
+    height: 15%;
   }
   #contacts-container p {
     font-size: 1.2vh;
   }
   #all-contacts {
-    height: 30%;
+    height: 10%;
     width: 95%;
+  }
+  #all-contacts img {
+    height: 25px;
   }
   .contact {
     width: 100%;
   }
   #email-container {
-    width: 90%;
+    width: 100%;
+    height: 50vh;
+    margin: 20px 0;
   }
   #email-container button {
     font-size: 3vw;
@@ -778,9 +795,10 @@ footer span a {
   }
   #email-form {
     width: 100%;
-    padding: 10% 5%;
+    padding: 0%;
   }
-  #email-form input, #email-form textarea {
+  #email-form input,
+  #email-form textarea {
     padding: 4%;
   }
   #sendMessage {

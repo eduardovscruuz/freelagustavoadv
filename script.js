@@ -1,74 +1,90 @@
-
-
 const intersectObserver = new IntersectionObserver(
-  entries => {
-  entries.forEach(entry => {
-      entry.target.classList.toggle("show", entry.isIntersecting);
-      if(entry.isIntersecting){intersectObserver.unobserve(entry.target)}
-      });
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle('show', entry.isIntersecting);
+      if (entry.isIntersecting) {
+        intersectObserver.unobserve(entry.target);
+      }
+    });
   },
   {
-      threshold:0
+    threshold: 0,
   }
 );
 
-const elements = document.querySelectorAll(".animate");
+const elements = document.querySelectorAll('.animate');
 
-elements.forEach(element => intersectObserver.observe(element));
+elements.forEach((element) => intersectObserver.observe(element));
 
 const showInfoButtons = document.querySelectorAll('.info-btn');
-      const infoOverlay = document.querySelector('.info-overlay');
-      const infoPopup = document.querySelector('.info-popup');
+const infoOverlay = document.querySelector('.info-overlay');
+const infoPopup = document.querySelector('.info-popup');
 
-      showInfoButtons.forEach(button => {
-          button.addEventListener('click', () => {
-              const buttonClasses = button.classList;
-              let content = '';
-              let titleContent = '';
-              let image = '';
+showInfoButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const buttonClasses = button.classList;
+    let content = '';
+    let titleContent = '';
+    let image = '<img src="./assets/criminal-icon.png" />';
 
-              if (buttonClasses.contains('consultoria')) {
-                  image = '<img src="./assets/consultoria.png" alt="consultoria jurídica">';
-                  titleContent = 'CONSULTORIA JURÍDICA';
-                  content = 'Em um cenário tributário cada vez mais complexo, a consultoria jurídica torna-se um elemento vital para pessoas físicas e jurídicas, que buscam evitar cobranças de tributos inesperados pelo Fisco. Em razão de constantes mudanças legislativas, é essencial que você ou sua empresa estejam de acordo com as leis e regimes tributários, agindo de forma preventiva diante dos conflitos inerentes às relações tributárias.';
-              } else if (buttonClasses.contains('fiscal')) {
-                  image = '<img src="./assets/fiscal.png" alt="execução fiscal">';
-                  titleContent = 'EXECUÇÃO FISCAL';
-                  content = 'As execuções fiscais correspondem a mais da metade do número de excuções realizadas em nosso ordenamento jurídico, gerando inúmeras CDAs, que podem atrapalhar a continuidade da sua empresa, ou, até mesmo, penhorar seu bem imóvel. Com uma defesa técnica avançada, você pode obter soluções para anular a CDA, buscando alguma nulidade ou até mesmo alegar a sua prescrição.';
-              } else if (buttonClasses.contains('irpf')) {
-                  image = '<img src="./assets/irpf.png" alt="isenção irpf" />';
-                  titleContent = 'ISENÇÃO IRPF';
-                  content = 'Todos os aposentados ou pensionistas que têm (ou tiveram) alguma dessas doenças, nos termos da Lei n° 7.713/88, têm direito à isenção do imposto de renda. tuberculose ativa; alienação mental; esclerose múltipla; neoplasia maligna (câncer) - mesmo que curado; cegueira (mesmo que monocular); hanseníase; paralisia irreversível e incapacitante; cardiopatia grave; doença de Parkinson; espondiloartrose anquilosante; nefropatia grave; hepatopatia grave; estados avançados da doença de Paget (osteíte deformante); contaminação por radiação; síndrome da imunodeficiência adquirida (HIV/AIDS).';
-              } else if (buttonClasses.contains('nacional')) {
-                  image = '<img src="./assets/nacional.png" alt="simples nacional" />';
-                  titleContent = 'SIMPLES NACIONAL';
-                  content = 'As empresas optantes pelo Simples Nacional, que comercializam produtos sujeitos ao regime de tributação monofásica do PIS e da Cofins e ao ICMS ST (substituição tributária), podem deduzir os valores referentes às vendas do cálculo do Simples Nacional. Essa possibilidade surgiu com o advento da Lei Complementar 147/2014. Estes tributos já foram pagos na origem, pela indústria ou pelo distribuidor. E quando sua empresa paga o DAS do Simples Nacional, está recolhendo em duplicidade. Os principais setores beneficiados são: perfumarias, vestuário, comércio de autopeças, comércio de cosméticos, drogarias e farmácias (exceto manipulação), material de construção, supermercados, bares, restaurantes e lojas de conveniências.';
-              }
+    if (buttonClasses.contains('info1')) {
+      titleContent = 'FLAGRANTE';
+      content =
+        'Atuação imediata no caso de prisão em flagrante, com o objetivo de garantir os direitos da pessoa presa. O advogado acompanha o procedimento policial, verificando a legalidade dos atos na delegacia, elabora estratégias de liberdade, além garantir a integridade física do cliente.';
+    } else if (buttonClasses.contains('info2')) {
+      titleContent = 'DEFESA EM LAVAGEM DE DINHEIRO';
+      content =
+        'Atuação especializada na defesa de acusados de lavagem de capitais, desde o inquérito policial até a sentença judicial. É realizada uma análise minuciosa das provas, comprovando a origem lícita das transações financeiras, participação no delito, comprovação de inocência. Além de buscar garantir a liberdade, a legalidade das provas, o advogado atua de forma estratégica que visa a restituição de bens ou valores, assim como desbloqueio das contas bancárias, utilizando de meios técnicos que garantem soluções eficientes.';
+    } else if (buttonClasses.contains('info3')) {
+      titleContent = 'CUSTÓDIA';
+      content =
+        'No momento da audiência de custódia, o advogado verifica a legalidade da prisão, busca garantir a liberdade do cliente, formula pedidos de soltura, garante os direitos do cliente.';
+    } else if (buttonClasses.contains('info4')) {
+      titleContent = 'DEFESA EM ORGANIZAÇÃO CRIMINOSA';
+      content =
+        'A defesa de acusados em integrar organização criminosa envolve a análise profunda de provas, como escutas telefônicas, relatórios de inteligência, meios de obtenção de provas, para identificar eventuais excessos cometidos pela acusação. O advogado busca garantir uma defesa técnica e justa.';
+    } else if (buttonClasses.contains('info5')) {
+      titleContent = 'INQUÉRITO POLICIAL';
+      content =
+        'No inquérito policial, a atuação do advogado garante que a investigação seja conduzida de maneira lícita, orientando o cliente, analisando a produção de prova juntada em sede policial. Essa atuação visa evitar ilegalidades, preparar uma defesa técnica, desenvolver estratégias eficazes caso a denúncia seja formalizada.';
+    } else if (buttonClasses.contains('info6')) {
+      titleContent = 'HABEAS CORPUS';
+      content =
+        'Habeas Corpus é um importante instrumento de defesa para assegurar a liberdade do cliente. O Habeas Corpus precisa ser estratégico, objetivo, técnico, para alcançar a liberdade. A Atuação do advogado especialista vai desde a decisão do juiz de 1° grau até os Tribunais Superiores.';
+    } else if (buttonClasses.contains('info7')) {
+      titleContent = 'PROCESSO CRIMINAL';
+      content =
+        'A atuação do advogado no processo criminal envolve a análise detalhada do caso, a elaboração de estratégias de defesa, teses consolidadas, soluções eficientes para cada caso. Acompanhamento em todas as fases do processo até a sentença.';
+    } else if (buttonClasses.contains('info8')) {
+      titleContent = 'DEFESA NA LEI DAS DROGAS';
+      content =
+        'Em crimes relacionados à lei de drogas, a atuação inicia desde a abordagem, quantidade apreendida, provas juntadas, testemunhas, até a sentença. O advogado atua elaborando teses defensivas eficientes, estratégias consolidadas, afim de garantir os direitos individuais e a liberdade do acusado.';
+    }
 
-              infoPopup.innerHTML = `
+    infoPopup.innerHTML = `
                   <button class="close-info-button custom-close"> ⬅ Voltar</button>
                   <h2>${image}${titleContent}</h2>
                   <p>${content}</p>
               `;
 
-              infoOverlay.style.display = 'flex';
-              document.body.style.overflow = 'hidden';
+    infoOverlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 
-              // Adicione um pequeno atraso antes de aplicar a classe "active"
-              setTimeout(() => {
-                  infoOverlay.classList.add('active');
-                  infoPopup.classList.add('active');
-              }, 10);
+    // Adicione um pequeno atraso antes de aplicar a classe "active"
+    setTimeout(() => {
+      infoOverlay.classList.add('active');
+      infoPopup.classList.add('active');
+    }, 10);
 
-              const customCloseButton = document.querySelector('.custom-close');
-              customCloseButton.addEventListener('click', () => {
-                  infoOverlay.style.display = 'none';
-                  infoOverlay.classList.remove('active');
-                  infoPopup.classList.remove('active');
-                  document.body.style.overflow = 'auto';
-              });
-          });
-      });
+    const customCloseButton = document.querySelector('.custom-close');
+    customCloseButton.addEventListener('click', () => {
+      infoOverlay.style.display = 'none';
+      infoOverlay.classList.remove('active');
+      infoPopup.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+  });
+});
 
 // define all UI variable
 const navToggler = document.querySelector('.nav-toggler');
@@ -80,34 +96,32 @@ allEventListners();
 
 // functions of all event listners
 function allEventListners() {
-// toggler icon click event
-navToggler.addEventListener('click', togglerClick);
-// nav links click event
-navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
+  // toggler icon click event
+  navToggler.addEventListener('click', togglerClick);
+  // nav links click event
+  navLinks.forEach((elem) => elem.addEventListener('click', navLinkClick));
 }
 
 // togglerClick function
 function togglerClick() {
-navToggler.classList.toggle('toggler-open');
-navMenu.classList.toggle('open');
+  navToggler.classList.toggle('toggler-open');
+  navMenu.classList.toggle('open');
 
   document.body.style.overflow = 'hidden';
-if(infoOverlay.style.display === 'flex'){
-  infoOverlay.style.display = 'none';
-  document.body.style.overflow = 'auto';
-
-}
-else(infoOverlay.style.display = 'none');{
-  infoOverlay.style.display = 'flex';
-
-}
-infoOverlay.style.opacity = '1';
-infoOverlay.style.zIndex = '0';
+  if (infoOverlay.style.display === 'flex') {
+    infoOverlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  } else infoOverlay.style.display = 'none';
+  {
+    infoOverlay.style.display = 'flex';
+  }
+  infoOverlay.style.opacity = '1';
+  infoOverlay.style.zIndex = '0';
 }
 
 // navLinkClick function
 function navLinkClick() {
-if(navMenu.classList.contains('open')) {
-  navToggler.click();
-}
+  if (navMenu.classList.contains('open')) {
+    navToggler.click();
+  }
 }
